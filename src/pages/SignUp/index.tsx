@@ -47,12 +47,6 @@ const SignUp: React.FC = () => {
                 Entrar
               </Button>
             </Form>
-            <Button
-              onPress={() => {
-                console.log('good is good');
-              }}>
-              Entrar
-            </Button>
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>

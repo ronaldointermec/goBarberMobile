@@ -1,16 +1,18 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator} from '@react-navigation/stack';
 
 import {SignIn} from '../pages/SignIn';
 import {SignUp} from '../pages/SignUp';
 
-const Auth = createNativeStackNavigator();
+const Auth = createStackNavigator();
 
 const AuthRoutes: React.FC = () => (
   <Auth.Navigator
     screenOptions={{
       headerShown: false,
-      contentStyle: {backgroundColor: '#312e38'},
+      cardStyle: {
+        backgroundColor: '#312e38',
+      },
     }}
     // initialRouteName="SignUp"
   >
