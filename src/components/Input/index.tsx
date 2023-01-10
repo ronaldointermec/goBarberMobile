@@ -35,10 +35,8 @@ const Input: React.ForwardRefRenderFunction<HTMLDivElement, InputProps> = (
   }, []);
 
   const handleInputBluer = useCallback(() => {
-    setIsFilled(!!inputValueRef.current.value);
     setIsFocused(false);
-    console.log(`is ${name} focused: ${isFocused}`);
-    console.log(`is ${name}filled: ${isFilled}`);
+    setIsFilled(!!inputValueRef.current.value);
   }, [,]);
 
   useEffect(() => {
@@ -64,11 +62,13 @@ const Input: React.ForwardRefRenderFunction<HTMLDivElement, InputProps> = (
   }));
 
   return (
-    <Container isFocused={isFocused}>
+    <Container isFocused={isFocused} isErrored={!!error}>
       <Icon
+        isFocused={isFocused}
+        isFilled={isFilled}
         name={icon}
         size={20}
-        color={isFocused || isFilled ? '#ff9000' : ' #666360'}
+        // color={isFocused || isFilled ? '#ff9000' : ' #666360'}
       />
       <TextInput
         ref={inputElementRef}
